@@ -1,13 +1,15 @@
 import React from 'react';
-import { Browser, ReducerWithoutAction, SwitchCase } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
+import Alunos from './pages/Alunos';
 
-export default function Routes() {
+export default function Router() {
     return (
-        <Browser>
-            <Switch>
-                <Route path="/" exact component={Login}/>
-            </Switch>
-        </Browser>
+        <BrowserRouter>
+            <Routes>
+                <Route path="" exact element={<Login/>}/>
+                <Route path="alunos" element={<Alunos/>}/>
+            </Routes>
+        </BrowserRouter>
     )
 }
