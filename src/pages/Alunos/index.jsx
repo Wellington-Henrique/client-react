@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import logoCadastro from "../../assets/cadastro-ico.jpg"
 
 import "./styles.css";
-import { FiXCircle } from "react-icons/fi";
-import { FiEdit, FiUserX } from "react-icons/fi";
-
+import { FiXCircle, FiEdit, FiUserX } from "react-icons/fi";
 
 export default function Alunos() {
     return (
@@ -13,7 +11,7 @@ export default function Alunos() {
             <header>
                 <img src={logoCadastro} alt="Cadastro" />
                 <span>Bem-vindo <strong>Desenvolvedor</strong>!</span>
-                <Link  className="button" to="aluno/novo">Novo Aluno</Link>
+                <Link  className="button" to="/aluno/novo/0">Novo Aluno</Link>
                 <button type="button" className="">
                     <FiXCircle size={35} color="#17202a"/>
                 </button>
