@@ -48,6 +48,14 @@ export default function Alunos() {
         }
     }
 
+    async function editAluno(id) {
+        try {
+            navigate(`/aluno/novo/${id}`);
+        } catch(err) {
+            alert('Não foi possível editar o aluno: ' + err)
+        }
+    }
+
     return (
         <div className="aluno-container">
             <header>
@@ -72,10 +80,10 @@ export default function Alunos() {
                     <b>Nome:</b>{aluno.nome}<br/><br/>
                     <b>Email:</b>{aluno.email}<br/><br/>
                     <b>Idade:</b>{aluno.idade}<br/><br/>
-                    <button type="button" className="">
+                    <button onClick={() => editAluno(aluno.id)} type="button">
                         <FiEdit size={35} color="#17202a"/>
                     </button>
-                    <button type="button" className="">
+                    <button type="button">
                         <FiUserX size={35} color="#17202a"/>
                     </button>
                     </li>
