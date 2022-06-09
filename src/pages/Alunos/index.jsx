@@ -8,7 +8,8 @@ import { FiXCircle, FiEdit, FiUserX } from "react-icons/fi";
 import api from "../../services/api";
 
 export default function Alunos() {
-    const  [nome, setNome] = useState('');
+    const  [searchInput, setSearchInput] = useState('');
+    const[filtro, setFiltro] = useState([]);
     const[alunos, setAlunos] = useState([]);
 
     const email = localStorage.getItem('email');
@@ -19,6 +20,21 @@ export default function Alunos() {
     const authorization = {
         headers: {
             Authorization: `Bearer ${token}`
+        }
+    }
+
+    const searchAlunos = (searchValue) => {
+        setSearchInput(searchValue);
+
+        if (searchInput !== '') {
+            const dadosFiltrados = alunos.filter((item) => {
+                return Object.values(item).join("").toLowerCase()
+                .includes(searchInput.toLowerCase());
+            })
+
+            setFiltro(dadosFiltrados);
+        } else {
+            setFiltro(alunos);
         }
     }
 
@@ -68,14 +84,11 @@ export default function Alunos() {
             </header>
 
             <form action="">
-                <input type="text" placeholder="Nome" />
-                <button type="button" className="button">
-                    Filtrar aluno por nome (parcial)
-                </button>
+                <input onChange={e => searchAlunos(e.target.value)} type="text" placeholder="Nome" />
             </form>
             <h1>Relação de alunos</h1>
             <ul>
-                {alunos.map(aluno => 
+                {filtro.map(aluno => 
                     <li>
                     <b>Nome:</b>{aluno.nome}<br/><br/>
                     <b>Email:</b>{aluno.email}<br/><br/>
