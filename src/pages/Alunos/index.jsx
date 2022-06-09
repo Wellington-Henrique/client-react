@@ -109,7 +109,7 @@ export default function Alunos() {
             <header>
                <img src={logoCadastro} alt="Cadastro" />
                <span>Bem-Vindo, <strong>{email}</strong>!</span>
-               <Link className="button" to="aluno/novo/0">Novo Aluno</Link>
+               <Link className="button" to="/aluno/novo/0">Novo Aluno</Link>
                <button onClick={logout} type="button">
                    <FiXCircle size={35}  color="#17202a" />
                </button>
