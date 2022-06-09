@@ -91,7 +91,7 @@ export default function NovoAluno() {
                         value={idade}
                         onChange={e => setIdade(e.target.value)}
                     />
-                    <button className="button" type="submit">Texto</button>
+                    <button className="button" type="submit">{alunoId === '0' ? 'Incluir' : 'Atualizar'}</button>
                 </form>
             </div>
         </div>

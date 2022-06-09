@@ -19,6 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .novo-aluno-container .content section {
@@ -26,9 +27,9 @@
     max-width: 380px;
 }
 
-.novo-aluno-container section.form {
+.novo-aluno-container section.form{
     width: 100%;
-    max-width:350px;
+    max-width: 350px;
     margin-right: 30px;
 }
 
@@ -39,9 +40,9 @@
     display: block;
 }
 
-.novo-aluno-container .content section h1 {
+.novo-aluno-container .content section h1{
     margin: 64px 0 32px;
-    font-size: 32px
+    font-size: 32px;
 }
 
 .novo-aluno-container .content section p {
